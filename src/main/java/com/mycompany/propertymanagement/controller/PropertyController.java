@@ -39,6 +39,9 @@ public class PropertyController {
     }
     @GetMapping("/properties")
     public ResponseEntity<List<PropertyDTO>> getAllProperties() {
+        System.out.println("inside service"+dummy);
+        System.out.println("inside service"+dbUrl);
+
         List<PropertyDTO> propertyList = propertyService.getAllProperties();
         ResponseEntity<List<PropertyDTO>> responseEntity = new ResponseEntity<>(propertyList,HttpStatus.OK);
         return responseEntity;
